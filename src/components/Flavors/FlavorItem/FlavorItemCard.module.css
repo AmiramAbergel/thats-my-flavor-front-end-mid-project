@@ -1,0 +1,29 @@
+.actions {
+    text-align: right;
+}
+
+.actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #3d87dd;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+    background-color: #3d87dd;
+    border-color: #3d87dd;
+    color: white;
+}
+
+.actions .button--alt {
+    color: #3d87dd;
+}
+
+.actions .button {
+    background-color: #3d87dd;
+    color: white;
+}
