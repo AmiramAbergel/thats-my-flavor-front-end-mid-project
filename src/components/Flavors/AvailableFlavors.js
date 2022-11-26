@@ -6,16 +6,15 @@ import FlavorItemCard from './FlavorItem/FlavorItemCard';
 const DUMMY_FLAVS = [
     {
         id: 'm1',
-        flavor_name: 'Blondie Ambition',
+        flavorName: 'Blondie Ambition',
         category: 'Chocolate',
-        img_url:
-            'https://world.openfoodfacts.org/images/products/003/663/108/5154/front_en.3.full.jpg',
+        imgUrl: 'https://world.openfoodfacts.org/images/products/003/663/108/5154/front_en.3.full.jpg',
         ingredients: ['cream', 'skim milk'],
-        allergy_info: 'may contain other tree nuts',
-        dietary_certifications: 'Kosher',
+        allergyInfo: 'may contain other tree nuts',
+        dietaryCertifications: 'Kosher',
         description: 'Cheesecake Ice Cream with Cheesecake Brownie Chunks',
-        store_name: 'MC',
-        store_address: 'Nicollet Mall between 7th and 8th Street',
+        storeName: 'MC',
+        storeAddress: 'Nicollet Mall between 7th and 8th Street',
         amount: 1,
         price: 22.99,
     },
