@@ -1,24 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../../../firebase/auth';
 import classes from './MainNavigation.module.css';
 /*
  * General footer component.
  */
 const MainNavigation = () => {
+    const { authUser, signOut } = useAuth();
     return (
         <header className={classes.header}>
             <nav className={classes.nav}>
                 <ul>
-                    <li>
-                        <NavLink
-                            to='/'
-                            className={(navData) =>
-                                navData.isActive ? 'active' : ''
-                            }
-                        >
-                            Home
-                        </NavLink>
-                    </li>
                     <li>
                         <NavLink
                             to='/flavors'
@@ -48,6 +40,10 @@ const MainNavigation = () => {
                         >
                             Locate Flavor
                         </NavLink>
+                    </li>
+                    <li>
+                        <div> {authUser?.email}</div>
+                        <button onClick={signOut}>Logout</button>
                     </li>
                 </ul>
             </nav>
