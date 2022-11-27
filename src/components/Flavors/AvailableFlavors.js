@@ -15,6 +15,7 @@ const AvailableFlavors = (props) => {
         setFlavItemIsShown(false);
     };
     console.log(props.flavorsData);
+
     const flavorsList = props.flavorsData.map((flavor) => (
         <FlavorItem
             key={flavor.id}
