@@ -7,6 +7,7 @@ const FlavorItem = (props) => {
             <button onClick={props.onShowFlavItem}>
                 <h3>{props.name}</h3>
                 <div className={classes.description}>{props.description}</div>
+                <div className={classes.description}>{props.description}</div>
                 <div className={classes.price}>{price}</div>
             </button>
         </li>
