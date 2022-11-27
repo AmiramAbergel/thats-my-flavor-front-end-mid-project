@@ -1,9 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-
 import Home from './pages/Home';
-
 import { AuthUserProvider } from './firebase/auth';
-import MainLayoutRoutes from './routes/MainLayuotRoutes';
+import MainLayoutRoutes from './routes/MainLayoutRoutes';
 
 function App() {
     return (
