@@ -21,6 +21,7 @@ const Layout = (props) => {
                 <Favorites
                     favorites={props.favorites}
                     onClose={hideFavoritesHandler}
+                    onRemoveFav={props.onRemoveFav}
                 />
             )}
             <Header onShowFavorites={showFavoritesHandler} />

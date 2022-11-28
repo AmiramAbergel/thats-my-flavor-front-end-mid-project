@@ -7,13 +7,18 @@ import RandFlavor from '../pages/RandFlavor';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../firebase/auth';
-import { getFlavors, getFavorites } from '../firebase/DatabaseService';
+import {
+    getFlavors,
+    getFavorites,
+    deleteFavorite,
+} from '../firebase/DatabaseService';
 const REDIRECT_PAGE = '/home';
 function MainLayoutRoutes() {
     const { authUser, isLoading } = useAuth();
     const [isLoadingF, setIsLoadingF] = useState(true);
     const [flavors, setFlavors] = useState({});
     const [favorites, setFavorites] = useState({});
+    const [deleteFavoriteId, setDeleteFavoriteId] = useState('');
     const navigate = useNavigate();
     // Listen for changes to loading and authUser, redirect if needed
     useEffect(() => {
@@ -40,15 +45,33 @@ function MainLayoutRoutes() {
         }
     }, [authUser]);
 
-    // Get flavors once user is logged in
+    // Get flavors and favorites once user is logged in
     useEffect(() => {
         getAllFlavors();
         getAllFavorites();
     }, [getAllFlavors, getAllFavorites, authUser]);
 
+    // Delete favorite from Storage
+    const onDeleteFav = async (id) => {
+        let isSucceed = true;
+        try {
+            await deleteFavorite(id);
+        } catch (error) {
+            console.log(error);
+            isSucceed = false;
+        }
+        setDeleteFavoriteId('');
+    };
+    // Update favorite from Storage
+    const onUpdateFav = (item) => {};
+
     return (
         <>
-            <Layout favorites={favorites}>
+            <Layout
+                onRemoveFav={onDeleteFav}
+                onUpdateFav={onUpdateFav}
+                favorites={favorites}
+            >
                 <Routes>
                     <Route
                         path='/flavors'

@@ -130,8 +130,8 @@ export function addFavorite(
     });
 }
 
-// Updates flavor with @docId with given information.
-export function updateFlavor(
+// Updates favorite with @docId with given information.
+export function updateFavorite(
     docId,
     uid,
     allergyInfo,
@@ -164,7 +164,7 @@ export function updateFlavor(
     });
 }
 
-// // Deletes flavor with given @id.
-// export function deleteFlavor(id) {
-//     deleteDoc(doc(db, FLAVORS_COLLECTION, id));
-// }
+// Deletes favorite with given @id.
+export function deleteFavorite(id) {
+    deleteDoc(doc(db, FAVORITES_COLLECTION, id));
+}
