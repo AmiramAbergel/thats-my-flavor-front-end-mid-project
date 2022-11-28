@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../../../firebase/auth';
-import Header from '../Header/Header';
+
 import classes from './MainNavigation.module.css';
 /*
  * General footer component.
@@ -50,7 +50,6 @@ const MainNavigation = () => {
                     </ul>
                 </nav>
             </header>
-            <Header />
         </>
     );
 };

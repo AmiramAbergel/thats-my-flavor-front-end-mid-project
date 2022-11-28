@@ -7,12 +7,13 @@ import RandFlavor from '../pages/RandFlavor';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../firebase/auth';
-import { getFlavors } from '../firebase/DatabaseService';
+import { getFlavors, getFavorites } from '../firebase/DatabaseService';
 const REDIRECT_PAGE = '/home';
 function MainLayoutRoutes() {
     const { authUser, isLoading } = useAuth();
-    const [isLoadingFlavors, setIsLoadingFlavors] = useState(true);
+    const [isLoadingF, setIsLoadingF] = useState(true);
     const [flavors, setFlavors] = useState({});
+    const [favorites, setFavorites] = useState({});
     const navigate = useNavigate();
     // Listen for changes to loading and authUser, redirect if needed
     useEffect(() => {
@@ -23,9 +24,17 @@ function MainLayoutRoutes() {
 
     const getAllFlavors = useCallback(async () => {
         if (authUser) {
-            const unsubscribe = await getFlavors(
-                setFlavors,
-                setIsLoadingFlavors
+            const unsubscribe = await getFlavors(setFlavors, setIsLoadingF);
+            return () => unsubscribe();
+        }
+    }, [authUser]);
+
+    const getAllFavorites = useCallback(async () => {
+        if (authUser) {
+            const unsubscribe = await getFavorites(
+                authUser.uid,
+                setFavorites,
+                setIsLoadingF
             );
             return () => unsubscribe();
         }
@@ -34,16 +43,17 @@ function MainLayoutRoutes() {
     // Get flavors once user is logged in
     useEffect(() => {
         getAllFlavors();
-    }, [getAllFlavors, authUser]);
+        getAllFavorites();
+    }, [getAllFlavors, getAllFavorites, authUser]);
 
     return (
         <>
-            <Layout>
+            <Layout favorites={favorites}>
                 <Routes>
                     <Route
                         path='/flavors'
                         element={
-                            !authUser || isLoadingFlavors ? (
+                            !authUser || isLoadingF ? (
                                 'Loading...'
                             ) : (
                                 <Flavors flavorsData={flavors} />
