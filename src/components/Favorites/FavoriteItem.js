@@ -9,15 +9,23 @@ const FavoriteItem = (props) => {
                 <h2>{props.name}</h2>
                 <h3>{props.name}</h3>
                 <div className={classes.description}>{props.description}</div>
-                <div className={classes.price}>{price}</div>
+
                 <div className={classes.summary}>
                     <span className={classes.price}>{price}</span>
-                    <span className={classes.amount}>x {props.amount}</span>
+                    <span>
+                        <h5>Tasted Before:</h5>
+                    </span>
+
+                    <span className={classes.amount}>
+                        {props.isTastedBefore ? 'x' : 'v'}
+                    </span>
                 </div>
             </div>
+            <button onClick={props.onUpdateFav}>
+                {props.isTastedBefore ? 'Mark as tasted' : 'UnMark as tasted'}
+            </button>
             <div className={classes.actions}>
-                <button onClick={props.onRemoveFav}>−</button>
-                <button onClick={props.onUpdateFav}>+</button>
+                <button onClick={props.onRemoveFav}>Delete favorite</button>
             </div>
         </li>
     );

@@ -20,7 +20,7 @@ const Favorites = (props) => {
                     amount={favorite.amount}
                     price={favorite.price}
                     onRemoveFav={() => props.onRemoveFav?.(favorite.id)}
-                    // onUpdateFav={() => props.onUpdateFav.bind(null, favorite)}
+                    onUpdateFav={() => props.onUpdateFav?.(favorite)}
                 />
             ))}
         </ul>
@@ -28,11 +28,10 @@ const Favorites = (props) => {
 
     return (
         <Modal onClose={props.onClose}>
-            {favoritesList}
             <div className={classes.total}>
-                <span>YouFav</span>
-                <span>{}</span>
+                <span>YourFav</span>
             </div>
+            <div>{favoritesList}</div>
             <div className={classes.actions}>
                 <button
                     className={classes['button--alt']}

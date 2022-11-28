@@ -11,6 +11,7 @@ import {
     getFlavors,
     getFavorites,
     deleteFavorite,
+    updateFavorite,
 } from '../firebase/DatabaseService';
 const REDIRECT_PAGE = '/home';
 function MainLayoutRoutes() {
@@ -18,7 +19,7 @@ function MainLayoutRoutes() {
     const [isLoadingF, setIsLoadingF] = useState(true);
     const [flavors, setFlavors] = useState({});
     const [favorites, setFavorites] = useState({});
-    const [deleteFavoriteId, setDeleteFavoriteId] = useState('');
+    const [isTastedBefore, setIsTastedBefore] = useState(false);
     const navigate = useNavigate();
     // Listen for changes to loading and authUser, redirect if needed
     useEffect(() => {
@@ -60,10 +61,31 @@ function MainLayoutRoutes() {
             console.log(error);
             isSucceed = false;
         }
-        setDeleteFavoriteId('');
     };
     // Update favorite from Storage
-    const onUpdateFav = (item) => {};
+    const onUpdateFav = async (favorite) => {
+        try {
+            await updateFavorite(
+                favorite.id,
+                authUser.uid,
+                favorite.allergyInfo,
+                favorite.amount,
+                favorite.category,
+                favorite.description,
+                favorite.dietaryCertifications,
+                favorite.flavorName,
+                favorite.imgUrl,
+                favorite.ingredients,
+                favorite.isAvailable,
+                favorite.price,
+                favorite.storeAddress,
+                favorite.storeName,
+                !favorite.isTastedBefore
+            );
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <>

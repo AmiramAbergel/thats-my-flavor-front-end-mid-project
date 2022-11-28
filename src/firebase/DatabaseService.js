@@ -145,9 +145,10 @@ export function updateFavorite(
     isAvailable,
     price,
     storeAddress,
-    storeName
+    storeName,
+    isTastedBefore
 ) {
-    setDoc(doc(db, FLAVORS_COLLECTION, docId), {
+    setDoc(doc(db, FAVORITES_COLLECTION, docId), {
         uid,
         allergyInfo,
         amount,
@@ -161,6 +162,7 @@ export function updateFavorite(
         price,
         storeAddress,
         storeName,
+        isTastedBefore,
     });
 }
 
