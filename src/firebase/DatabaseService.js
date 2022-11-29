@@ -171,8 +171,7 @@ export function deleteFavorite(id) {
     deleteDoc(doc(db, FAVORITES_COLLECTION, id));
 }
 
-export function addOneTIme(
-    uid,
+export async function addOneTIme({
     allergyInfo,
     amount,
     category,
@@ -184,21 +183,21 @@ export function addOneTIme(
     isAvailable,
     price,
     storeAddress,
-    storesName
-) {
-    addDoc(collection(db, FAVORITES_COLLECTION), {
-        uid,
-        allergyInfo,
-        amount,
-        category,
-        description,
-        dietaryCertifications,
-        flavorName,
-        imgUrl,
-        ingredients,
-        isAvailable,
-        price,
-        storeAddress,
-        storesName,
+    storeNames,
+}) {
+    console.log(storeNames);
+    await addDoc(collection(db, FLAVORS_COLLECTION), {
+        allergyInfo: allergyInfo,
+        amount: amount,
+        category: category,
+        description: description,
+        dietaryCertifications: dietaryCertifications,
+        flavorName: flavorName,
+        imgUrl: imgUrl,
+        ingredients: ingredients,
+        isAvailable: isAvailable,
+        price: price,
+        storeAddress: storeAddress,
+        storeNames: storeNames,
     });
 }
