@@ -109,7 +109,7 @@ export function addFavorite(
     isAvailable,
     price,
     storeAddress,
-    storeName,
+    storesName,
     isTastedBefore
 ) {
     addDoc(collection(db, FAVORITES_COLLECTION), {
@@ -125,7 +125,7 @@ export function addFavorite(
         isAvailable,
         price,
         storeAddress,
-        storeName,
+        storesName,
         isTastedBefore,
     });
 }
@@ -145,7 +145,7 @@ export function updateFavorite(
     isAvailable,
     price,
     storeAddress,
-    storeName,
+    storesName,
     isTastedBefore
 ) {
     setDoc(doc(db, FAVORITES_COLLECTION, docId), {
@@ -161,7 +161,7 @@ export function updateFavorite(
         isAvailable,
         price,
         storeAddress,
-        storeName,
+        storesName,
         isTastedBefore,
     });
 }
@@ -169,4 +169,36 @@ export function updateFavorite(
 // Deletes favorite with given @id.
 export function deleteFavorite(id) {
     deleteDoc(doc(db, FAVORITES_COLLECTION, id));
+}
+
+export function addOneTIme(
+    uid,
+    allergyInfo,
+    amount,
+    category,
+    description,
+    dietaryCertifications,
+    flavorName,
+    imgUrl,
+    ingredients,
+    isAvailable,
+    price,
+    storeAddress,
+    storesName
+) {
+    addDoc(collection(db, FAVORITES_COLLECTION), {
+        uid,
+        allergyInfo,
+        amount,
+        category,
+        description,
+        dietaryCertifications,
+        flavorName,
+        imgUrl,
+        ingredients,
+        isAvailable,
+        price,
+        storeAddress,
+        storesName,
+    });
 }
