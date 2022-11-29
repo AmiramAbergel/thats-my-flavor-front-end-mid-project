@@ -108,8 +108,7 @@ export function addFavorite(
     ingredients,
     isAvailable,
     price,
-    storeAddress,
-    storesName,
+
     isTastedBefore
 ) {
     addDoc(collection(db, FAVORITES_COLLECTION), {
@@ -124,8 +123,7 @@ export function addFavorite(
         ingredients,
         isAvailable,
         price,
-        storeAddress,
-        storesName,
+
         isTastedBefore,
     });
 }
@@ -144,8 +142,7 @@ export function updateFavorite(
     ingredients,
     isAvailable,
     price,
-    storeAddress,
-    storesName,
+
     isTastedBefore
 ) {
     setDoc(doc(db, FAVORITES_COLLECTION, docId), {
@@ -160,8 +157,7 @@ export function updateFavorite(
         ingredients,
         isAvailable,
         price,
-        storeAddress,
-        storesName,
+
         isTastedBefore,
     });
 }

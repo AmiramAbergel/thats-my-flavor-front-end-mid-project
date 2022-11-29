@@ -42,8 +42,7 @@ const AvailableFlavors = (props) => {
                 selectedToFavorite.ingredients,
                 selectedToFavorite.isAvailable,
                 selectedToFavorite.price,
-                selectedToFavorite.storeAddress,
-                selectedToFavorite.storeName,
+
                 isTastedBefore
             );
         } catch (error) {

@@ -78,8 +78,6 @@ function MainLayoutRoutes() {
                 favorite.ingredients,
                 favorite.isAvailable,
                 favorite.price,
-                favorite.storeAddress,
-                favorite.storeName,
                 !favorite.isTastedBefore
             );
         } catch (error) {
