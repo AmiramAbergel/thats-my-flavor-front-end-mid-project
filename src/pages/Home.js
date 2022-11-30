@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase';
 import { useAuth } from '../firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../components/UI/Modal/Modal';
+import classes from './Home.module.css';
 const REDIRECT_PAGE = '/flavors';
 // Configure FirebaseUI.
 const uiConfig = {
@@ -29,9 +30,20 @@ const Home = () => {
 
     return (
         <main>
-            <h1>Welcome Page</h1>
-            <p>Learn more about our ice cream flavors</p>
-            <button onClick={() => setLogin(true)}>Login / Register</button>
+            <div>
+                <h1 className={classes.hd}>That's my flavor</h1>
+                <h3>
+                    We have an ice-cream locator that will help you find your
+                    favorite flavor!
+                </h3>
+                <h5>Learn more about our ice cream flavors</h5>
+                <div>
+                    <button onClick={() => setLogin(true)}>
+                        Login / Register
+                    </button>
+                </div>
+            </div>
+
             {login && (
                 <Modal onClose={() => setLogin(false)}>
                     <StyledFirebaseAuth

@@ -1,0 +1,121 @@
+h1 {
+    font-family: 'Lobster', sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Lobster', sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h5 {
+    font-family: 'Lobster', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+    position: relative;
+    left: calc(50% - 4em);
+    top: calc(50% - 2em);
+    height: 4em;
+    width: 8em;
+    font-family: 'Lobster', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    background: -webkit-linear-gradient(top, #555, #333);
+    background: linear-gradient(top, #555, #333);
+    color: #333;
+    transform-origin: 50% 4em;
+    -webkit-animation: wiggle 1.5s linear infinite;
+    animation: wiggle 1.5s linear infinite;
+    border-radius: 20px;
+}
+
+@keyframes wiggle {
+    0% {
+        -webkit-transform: rotateZ(0);
+        transform: rotateZ(0);
+    }
+    10% {
+        -webkit-transform: rotateZ(-15deg);
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        -webkit-transition: rotateZ(10deg);
+        transition: rotateZ(10deg);
+    }
+    25% {
+        -webkit-transition: rotateZ(-10deg);
+        transition: rotateZ(-10deg);
+    }
+    30% {
+        -webkit-transition: rotateZ(6deg);
+        transition: rotateZ(6deg);
+    }
+    35% {
+        -webkit-transform: rotateZ(-4deg);
+        transform: rotateZ(-4deg);
+    }
+    40% {
+        transform: rotateZ(7deg);
+    }
+    50% {
+        transform: rotateZ(-6deg);
+    }
+    60% {
+        transform: rotateZ(10deg);
+    }
+    70% {
+        transform: rotateZ(-14deg);
+    }
+    80% {
+        transform: rotateZ(3deg);
+    }
+    90% {
+        transform: rotateZ(-7deg);
+    }
+    100% {
+        -webkit-transition: rotateZ(0);
+        transition: rotateZ(0);
+    }
+}
+
+.hd {
+    background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiZ0cp42Ciqsm8HJoo3cn_ZyHC0FhJNAyHFuyoqaYpPuknJoaFDQ)
+        center center;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: move 5s linear infinite;
+
+    -moz-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-animation: move 10s linear infinite;
+
+    -o-text-fill-color: transparent;
+    -o-background-clip: text;
+    -o-animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        background-position: center left;
+    }
+    100% {
+        background-position: center right;
+    }
+}
+@keyframes move {
+    0% {
+        background-position: center left;
+    }
+    100% {
+        background-position: left bottom;
+    }
+}
