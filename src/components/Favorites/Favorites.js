@@ -28,7 +28,7 @@ const Favorites = (props) => {
     return (
         <Modal onClose={props.onClose}>
             <div className={classes.total}>
-                <span>YourFav</span>
+                <span>Here is your favorites flavors...</span>
             </div>
             <div>{favoritesList}</div>
             <div className={classes.actions}>
