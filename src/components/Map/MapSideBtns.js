@@ -4,10 +4,11 @@ const MapSideBtns = (props) => {
     return (
         <div className={classes.row}>
             <h2>FInd out if your flavor available!</h2>
-            {props.flavorsData.map((attr) => {
+            {props.flavorsData.map((attr, i) => {
                 if (attr.category === 'Vanilla') {
                     return (
                         <button
+                            key={i}
                             className={`${classes.column} ${classes.vanilla}`}
                         >
                             {attr.flavorName}
@@ -15,13 +16,17 @@ const MapSideBtns = (props) => {
                     );
                 } else if (attr.category === 'Nuts') {
                     return (
-                        <button className={`${classes.column} ${classes.nuts}`}>
+                        <button
+                            key={i}
+                            className={`${classes.column} ${classes.nuts}`}
+                        >
                             {attr.flavorName}
                         </button>
                     );
                 } else if (attr.category === 'Fruits') {
                     return (
                         <button
+                            key={i}
                             className={`${classes.column} ${classes.fruits}`}
                         >
                             {attr.flavorName}
@@ -30,6 +35,7 @@ const MapSideBtns = (props) => {
                 } else if (attr.category === 'Chocolate') {
                     return (
                         <button
+                            key={i}
                             className={`${classes.column} ${classes.chocolate}`}
                         >
                             {attr.flavorName}

@@ -10,8 +10,10 @@ const AvailableFlavors = (props) => {
     const [flavItemIsShown, setFlavItemIsShown] = useState(false);
     const { authUser } = useAuth();
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [specificFlavor, setSpecificFlavor] = useState(null);
 
-    const showFlavItemHandler = () => {
+    const showFlavItemHandler = (e) => {
+        setSpecificFlavor(e);
         setFlavItemIsShown(true);
     };
 
@@ -59,7 +61,7 @@ const AvailableFlavors = (props) => {
                 name={flavor.flavorName}
                 description={flavor.description}
                 price={flavor.price}
-                onShowFlavItem={showFlavItemHandler}
+                onShowFlavItem={() => showFlavItemHandler(flavor)}
                 onClose={hideFlavItemHandler}
             />
             <button
@@ -76,8 +78,12 @@ const AvailableFlavors = (props) => {
         <div className={classes.flex}>
             <section className={classes.flavors}>
                 {flavItemIsShown && (
-                    <FlavorItemCard onClose={hideFlavItemHandler} />
+                    <FlavorItemCard
+                        flavorsData={specificFlavor}
+                        onClose={hideFlavItemHandler}
+                    />
                 )}
+
                 <Card>
                     <ul>{flavorsList}</ul>
                 </Card>
