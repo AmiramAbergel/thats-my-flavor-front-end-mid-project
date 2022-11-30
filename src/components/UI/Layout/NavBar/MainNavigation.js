@@ -23,16 +23,6 @@ const MainNavigation = () => {
                                 Flavor Finder
                             </NavLink>
                         </li>
-                        {/* <li>
-                            <NavLink
-                                to='/rand-flavor'
-                                className={({ isActive }) =>
-                                    isActive ? classes.active : undefined
-                                }
-                            >
-                                Random Flavor
-                            </NavLink>
-                        </li> */}
                         <li>
                             <NavLink
                                 to='/map'
@@ -44,8 +34,103 @@ const MainNavigation = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <div> {authUser?.email}</div>
-                            <button onClick={signOut}>Logout</button>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>{' '}
+                        <li>
+                            <NavLink
+                                to='/rand-flavor'
+                                className={({ isActive }) =>
+                                    isActive ? classes.active : undefined
+                                }
+                            ></NavLink>
+                        </li>
+                        <li className={classes.login}>
+                            <div className={classes.mail}>
+                                {authUser?.email}
+                            </div>
+                            <button
+                                className={classes.navBtn}
+                                onClick={signOut}
+                            >
+                                Logout
+                            </button>
                         </li>
                     </ul>
                 </nav>

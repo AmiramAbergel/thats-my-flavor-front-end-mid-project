@@ -6,7 +6,7 @@
     width: 100vw;
     height: 5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #bde0fe;
     position: sticky;
@@ -30,6 +30,7 @@
 .nav li {
     margin-left: 1.5rem;
     font-size: 1.5rem;
+    padding: 20px;
 }
 
 .nav a {
@@ -42,4 +43,31 @@
 .nav a:active,
 .nav a.active {
     color: #ffafcc;
+}
+
+.navBtn {
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    background-color: #ffffff60;
+    color: white;
+    padding: 0.1rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.navBtn:hover,
+.navBtn:active {
+    background-color: #39b5c5;
+}
+
+.login {
+    display: flex;
+}
+
+.mail {
+    padding-top: 15px;
 }

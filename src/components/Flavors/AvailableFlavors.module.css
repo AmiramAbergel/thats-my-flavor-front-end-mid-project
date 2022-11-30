@@ -56,6 +56,10 @@
     font-weight: bold;
 }
 
+.btn:hover {
+    background-color: rgb(107 156 167);
+}
+
 .iconSend {
     background: url('https://api.iconify.design/ic/baseline-save-alt.svg')
         no-repeat left center / contain;
