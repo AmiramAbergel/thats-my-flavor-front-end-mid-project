@@ -21,7 +21,7 @@ Written in React.
 
 [![FirebaseOpensource.com](https://img.shields.io/badge/Docs-firebaseopensource.com-orange.svg)](https://firebaseopensource.com/projects/firebase/firebaseui-android)
 
-#### Demo: link here
+#### Demo: https://brilliant-blancmange-0dd0e6.netlify.app/home
 
 #### Getting Started:
 
