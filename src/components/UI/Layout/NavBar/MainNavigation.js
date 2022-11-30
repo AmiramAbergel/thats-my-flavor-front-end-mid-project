@@ -23,7 +23,7 @@ const MainNavigation = () => {
                                 Flavor Finder
                             </NavLink>
                         </li>
-                        <li>
+                        {/* <li>
                             <NavLink
                                 to='/rand-flavor'
                                 className={({ isActive }) =>
@@ -32,7 +32,7 @@ const MainNavigation = () => {
                             >
                                 Random Flavor
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li>
                             <NavLink
                                 to='/map'

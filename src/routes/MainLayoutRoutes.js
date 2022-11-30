@@ -103,8 +103,11 @@ function MainLayoutRoutes() {
                             )
                         }
                     />
-                    <Route path='/rand-flavor' element={<RandFlavor />} />
-                    <Route path='/map' element={<MapView />} />
+                    {/* <Route path='/rand-flavor' element={<RandFlavor />} /> */}
+                    <Route
+                        path='/map'
+                        element={<MapView flavorsData={flavors} />}
+                    />
                 </Routes>
             </Layout>
         </>

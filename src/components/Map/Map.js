@@ -1,49 +1,50 @@
-import React, { useCallback, useState } from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import { useState } from 'react';
+import GoogleMapReact from 'google-map-react';
+import LocationMarker from './LocationMarker';
+import LocationInfoBox from './LocationInfoBox';
 
-const containerStyle = {
-    width: '400px',
-    height: '400px',
-};
+// define constants
+const NATURAL_EVENT_WILDFIRE = 8;
 
-const center = {
-    lat: 43.68,
-    lng: -79.523,
-};
-const Map = () => {
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+const Map = ({ flavorsData, center, zoom }) => {
+    const [locationInfo, setLocationInfo] = useState(null);
+
+    const markers = flavorsData.map((attr) => {
+        return attr.storeAddress.map(({ name, lat, lng }, i) => {
+            return (
+                <LocationMarker
+                    key={i}
+                    name={name}
+                    lat={lat}
+                    lng={lng}
+                    onClick={() => setLocationInfo({ id: i, title: name })}
+                />
+            );
+        });
     });
 
-    const [map, setMap] = useState(null);
-
-    const onLoad = useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds(center);
-        map.fitBounds(bounds);
-
-        setMap(map);
-    }, []);
-
-    const onUnmount = useCallback(function callback(map) {
-        setMap(null);
-    }, []);
-
-    return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={12}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-        >
-            {/* Child components, such as markers, info windows, etc. */}
-            <></>
-        </GoogleMap>
-    ) : (
-        <></>
+    return (
+        <div className='map'>
+            <GoogleMapReact
+                bootstrapURLKeys={{
+                    key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+                }}
+                defaultCenter={center}
+                defaultZoom={zoom}
+            >
+                {markers}
+            </GoogleMapReact>
+            {locationInfo && <LocationInfoBox info={locationInfo} />}
+        </div>
     );
 };
 
-export default React.memo(Map);
+Map.defaultProps = {
+    center: {
+        lat: 43.666114869279646,
+        lng: -79.38808756819225,
+    },
+    zoom: 10,
+};
+
+export default Map;

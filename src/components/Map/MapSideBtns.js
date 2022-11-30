@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MapSideBtns = () => {
+const MapSideBtns = (props) => {
     return (
         <div>
             <button>Hey</button>
