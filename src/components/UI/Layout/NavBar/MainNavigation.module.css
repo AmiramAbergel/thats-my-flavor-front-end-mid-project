@@ -8,10 +8,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #39b5c5;
+    background-color: #bde0fe;
     position: sticky;
     top: 0;
     z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
 }
 
 .logo {
@@ -40,5 +41,5 @@
 .nav a:hover,
 .nav a:active,
 .nav a.active {
-    color: #f0c2af;
+    color: #ffafcc;
 }

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Modal from '../UI/Modal/Modal';
 import FavoriteItem from './FavoriteItem';
 import classes from './Favorites.module.css';

@@ -18,7 +18,7 @@ const AvailableFlavors = (props) => {
     const hideFlavItemHandler = () => {
         setFlavItemIsShown(false);
     };
-
+    console.log(isSubmitting);
     const addToFavHandler = async (event) => {
         const isTastedBefore = false;
         const selectedToFavorite = props.flavorsData.find(
@@ -62,21 +62,33 @@ const AvailableFlavors = (props) => {
                 onShowFlavItem={showFlavItemHandler}
                 onClose={hideFlavItemHandler}
             />
-            <button id={flavor.id} onClick={addToFavHandler}>
+            <button
+                className={`${classes.btn} ${classes.iconSend}`}
+                id={flavor.id}
+                onClick={addToFavHandler}
+            >
                 Add to favorites
             </button>
         </div>
     ));
 
     return (
-        <section className={classes.flavors}>
-            {flavItemIsShown && (
-                <FlavorItemCard onClose={hideFlavItemHandler} />
-            )}
-            <Card>
-                <ul>{flavorsList}</ul>
-            </Card>
-        </section>
+        <div className={classes.flex}>
+            <section className={classes.flavors}>
+                {flavItemIsShown && (
+                    <FlavorItemCard onClose={hideFlavItemHandler} />
+                )}
+                <Card>
+                    <ul>{flavorsList}</ul>
+                </Card>
+            </section>
+            <section className={classes.side}>
+                <img
+                    src='https://media.istockphoto.com/id/687685938/photo/woman-hand-holding-an-ice-cream-cone-on-a-pink-background.jpg?b=1&s=170667a&w=0&k=20&c=Nb0unkfk-iGTVSTtMH56gNL5zAKFKvR9OVVcovnT70Y='
+                    alt='ice'
+                ></img>
+            </section>
+        </div>
     );
 };
 

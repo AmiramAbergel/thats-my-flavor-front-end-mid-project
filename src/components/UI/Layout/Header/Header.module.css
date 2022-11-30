@@ -3,13 +3,13 @@
     top: 80px;
     left: 0;
     height: 5rem;
-    background-color: #126172;
+    background-color: #bde0fe;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 8px #0e0c0d00;
     z-index: 10;
     font-size: 1.1rem;
 }
@@ -19,18 +19,6 @@
     color: rgb(255, 255, 255);
 }
 
-.main-image:before {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 100% 40%;
-    width: 1200px;
-    height: 80px;
-    background-color: #def2f5;
-    right: -5px;
-    top: 40px;
-}
-
 .main-image {
     width: 100vw;
     height: 5rem;
@@ -38,18 +26,21 @@
     overflow: hidden;
     position: relative;
     height: 70px;
-}
-
-.main-image:after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 1295px;
-    height: 208px;
-    background-color: #def2f5;
-    left: -410px;
-    top: 46px;
+    background-color: #bde0fe;
+    --mask: radial-gradient(
+                120.75px at 50% calc(100% - 162px),
+                rgb(233, 233, 233) 99%,
+                rgba(251, 239, 239, 0) 101%
+            )
+            calc(50% - 108px) 0/216px 100%,
+        radial-gradient(
+                120.75px at 50% calc(100% + 108px),
+                rgba(255, 253, 253, 0) 99%,
+                rgb(255, 255, 255) 101%
+            )
+            50% calc(100% - 54px) / 216px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }
 
 .main-image img {
