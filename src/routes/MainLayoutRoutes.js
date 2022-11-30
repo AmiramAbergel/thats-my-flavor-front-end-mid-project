@@ -13,6 +13,7 @@ import {
     deleteFavorite,
     updateFavorite,
 } from '../firebase/DatabaseService';
+import Footer from '../components/UI/Layout/Footer/Footer';
 const REDIRECT_PAGE = '/home';
 function MainLayoutRoutes() {
     const { authUser, isLoading } = useAuth();

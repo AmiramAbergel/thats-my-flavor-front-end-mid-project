@@ -10,7 +10,10 @@ const Header = (props) => {
                 <HeaderFavoriteBtn onClick={props.onShowFavorites} />
             </header>
             <div className={classes['main-image']}>
-                <img alt='A table full of delicious food!' />
+                <img
+                    src='https://image.shutterstock.com/image-photo/healthy-low-calorie-summer-dessert-260nw-1121363915.jpg'
+                    alt='A table full of delicious food!'
+                />
             </div>
         </>
     );
