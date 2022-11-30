@@ -107,7 +107,13 @@ function MainLayoutRoutes() {
                     {/* <Route path='/rand-flavor' element={<RandFlavor />} /> */}
                     <Route
                         path='/map'
-                        element={<MapView flavorsData={flavors} />}
+                        element={
+                            !authUser || isLoadingF ? (
+                                'Loading...'
+                            ) : (
+                                <MapView flavorsData={flavors} />
+                            )
+                        }
                     />
                 </Routes>
             </Layout>

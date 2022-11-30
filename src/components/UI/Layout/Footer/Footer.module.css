@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     height: 80px;
-    background-color: #121214;
+    background-color: #126172;
 }
 
 .container {
@@ -16,7 +16,7 @@
 }
 
 .footer button {
-    background-color: #593cfb;
+    background-color: #ffffff60;
     color: #fff;
     font-weight: 600;
     font-size: 1rem;
@@ -25,6 +25,6 @@
 }
 
 .footer button:hover {
-    background-color: #4733b7;
+    background-color: #14b5ff60;
     transition: background-color 1s;
 }

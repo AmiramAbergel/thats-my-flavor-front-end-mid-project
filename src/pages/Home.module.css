@@ -1,41 +1,62 @@
+.bg {
+    position: absolute;
+    background-image: url('../assets/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 4;
+}
+
+.other {
+    opacity: 0.8;
+}
+
 h1 {
-    font-family: 'Lobster', sans-serif;
-    font-size: 100px;
+    font-family: 'Cursive', Cursive;
+    font-size: 5.9vw;
     font-weight: bold;
     text-align: center;
+    color: rgb(37, 96, 135);
+    -webkit-text-stroke: 1px rgb(37, 96, 135);
 }
 
 h3 {
-    font-family: 'Lobster', sans-serif;
-    font-size: 80px;
+    font-family: 'Cursive', Cursive;
+    font-size: 4vh;
     font-weight: bold;
     text-align: center;
+    color: rgb(37, 96, 135);
+    -webkit-text-stroke: 1px rgb(37, 96, 135);
 }
 
 h5 {
-    font-family: 'Lobster', sans-serif;
-    font-size: 50px;
+    font-family: 'Cursive', Cursive;
+    font-size: 4vmin;
     font-weight: bold;
     text-align: center;
+    color: rgb(37, 96, 135);
+    -webkit-text-stroke: 1px rgb(37, 96, 135);
 }
 
-button {
+.dance {
     position: relative;
     left: calc(50% - 4em);
     top: calc(50% - 2em);
-    height: 4em;
-    width: 8em;
-    font-family: 'Lobster', sans-serif;
-    font-size: 50px;
+    height: 2em;
+    width: 9em;
+    font-family: 'Lobster', Cursive;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
-    background: -webkit-linear-gradient(top, #555, #333);
-    background: linear-gradient(top, #555, #333);
-    color: #333;
+    background-color: #39b5c5;
+    color: rgb(255, 255, 255);
     transform-origin: 50% 4em;
     -webkit-animation: wiggle 1.5s linear infinite;
     animation: wiggle 1.5s linear infinite;
     border-radius: 20px;
+    border-color: aliceblue;
 }
 
 @keyframes wiggle {
@@ -86,7 +107,7 @@ button {
         transition: rotateZ(0);
     }
 }
-
+/* 
 .hd {
     background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiZ0cp42Ciqsm8HJoo3cn_ZyHC0FhJNAyHFuyoqaYpPuknJoaFDQ)
         center center;
@@ -101,7 +122,7 @@ button {
     -o-text-fill-color: transparent;
     -o-background-clip: text;
     -o-animation: move 10s linear infinite;
-}
+} */
 
 @keyframes move {
     0% {

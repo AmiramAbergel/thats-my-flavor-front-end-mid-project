@@ -1,5 +1,9 @@
+* {
+    font-family: cursive;
+}
+
 .header {
-    width: 99vw;
+    width: 100vw;
     height: 5rem;
     display: flex;
     justify-content: space-between;
@@ -24,11 +28,11 @@
 
 .nav li {
     margin-left: 1.5rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .nav a {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: #ffffff;
 }

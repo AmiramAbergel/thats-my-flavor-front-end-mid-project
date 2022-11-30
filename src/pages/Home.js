@@ -30,17 +30,22 @@ const Home = () => {
 
     return (
         <main>
-            <div>
-                <h1 className={classes.hd}>That's my flavor</h1>
-                <h3>
-                    We have an ice-cream locator that will help you find your
-                    favorite flavor!
-                </h3>
-                <h5>Learn more about our ice cream flavors</h5>
-                <div>
-                    <button onClick={() => setLogin(true)}>
-                        Login / Register
-                    </button>
+            <div className={classes.bg}>
+                <div className={classes.other}>
+                    <h1 className={classes.hd}>That's my flavor</h1>
+                    <h3>
+                        We have an ice-cream locator that will help you find
+                        your favorite flavor!
+                    </h3>
+                    <h5>Learn more about our ice cream flavors</h5>
+                    <div>
+                        <button
+                            className={classes.dance}
+                            onClick={() => setLogin(true)}
+                        >
+                            Login / Register
+                        </button>
+                    </div>
                 </div>
             </div>
 

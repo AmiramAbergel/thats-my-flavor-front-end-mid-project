@@ -5,7 +5,7 @@ body {
         'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #e0edef;
+    background-color: #83cfda42;
 }
 
 code {
@@ -15,7 +15,7 @@ code {
 
 .header {
     padding: 10px;
-    background-color: firebrick;
+    background-color: #83cfda42;
     color: #fff;
     position: fixed;
     top: 0;

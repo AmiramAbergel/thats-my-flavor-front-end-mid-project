@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <>
             <header className={classes.header}>
-                <h1>ICE-CREAM</h1>
+                <h1 className={classes.nyh1}>ICE-CREAM</h1>
                 <HeaderFavoriteBtn onClick={props.onShowFavorites} />
             </header>
             <div className={classes['main-image']}>
