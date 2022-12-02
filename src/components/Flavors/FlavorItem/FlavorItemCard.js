@@ -9,6 +9,7 @@ const FlavorItemCard = (props) => {
                 <h2>{props.flavorsData.flavorName}</h2>
                 <div className={classes.summary}>
                     <div className={classes.description}>
+                        <h4>Flavor Description</h4>
                         🍨 Flavor Description : {props.flavorsData.description}
                     </div>
                     <div className={classes.description}>
