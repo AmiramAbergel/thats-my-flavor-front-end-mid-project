@@ -23,6 +23,10 @@ Written in React.
 
 #### Demo: https://brilliant-blancmange-0dd0e6.netlify.app/home
 
+
+https://user-images.githubusercontent.com/39462161/219942903-563d4aa8-d628-4060-bd5e-c53e02a09dfd.mp4
+
+
 #### Getting Started:
 
 step 1: `git clone https://github.com/ploy32/thats-my-flavor-front-end-mid-project.git`
